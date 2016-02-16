@@ -17,6 +17,6 @@
 
 <!--- Update the config with the correct datasource name --->
 <cfset env = createObject( "java", "java.lang.System" ).getENV() />
-<cffile action="write" file="/var/www/custom/config/configAppliction.cfm" output="<cfset this.datasource.name = '#env.MYSQL_DATABASE#' />" />
+<cffile action="write" file="/var/www/custom/config/configApplication.cfm" output="<cfset this.datasource.name = '#env.MYSQL_DATABASE#' />" />
 
 <cfoutput><a href="/">Slatwall has been installed click here to launch</a></cfoutput>
