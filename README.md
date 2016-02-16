@@ -46,4 +46,37 @@ docker-compose up
 Thats It!  Navigate to the IP address of the docker machine you're running (that you noted above when starting the terminal).  You can also open kitematic to see the web app running, and click on the web preview link
 
 
-All of your projects code lives in the /www folder and you can work and commit as needed.  Then other team members can just pull down the codebase and GO! 
+# Important Next Steps
+
+Now that you've got the application up and running it's important to take a few next steps so that the repo works for YOUR project.
+
+Open the git config
+```
+/myProjectName/.git/config
+```
+
+It should look something like this:
+```
+[core]
+	symlinks = false
+	repositoryformatversion = 0
+	filemode = true
+	logallrefupdates = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/gregmoser/docker-lucee-mysql.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+```
+
+You want to change the url under origin to be something like
+```
+[remote "origin"]
+	url = https://github.com/MY_GITHUB_USERNAME/MY_PROJECT_NAME.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+```
+
+From that point forward all of your team members will just pull from this new git repo that you have setup.  They will be starting from the point that you left off.  All of your projects code lives in the /www folder so you and your co-workers can work, commit, push & pull as needed.
+ 

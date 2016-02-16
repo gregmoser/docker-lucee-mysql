@@ -21,6 +21,7 @@
 	<a href="/">Mura has been installed click here to launch</a>
 	<br />
 	<br />
-	<h1>
-	IMPORTANT: The Datasource name for you mura setup is called '#env.MYSQL_DATABASE#'</h1>
+	<h3>IMPORTANT: The datasource name for you mura setup is: '#env.MYSQL_DATABASE#'</h3>
+	<h3>IMPORTANT: The database type for your mura setup is: MySQL</h3>
+	<h3>IMPORTANT: The database username & password should be left blank</h3>
 </cfoutput>
