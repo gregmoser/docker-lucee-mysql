@@ -21,7 +21,7 @@ Not only will this simplify team development, but it will also allow you to run 
 To get up and running simply navigate to where you want to run your project and do:
 
 ```
-git clone https://github.com/gregmoser/docker-lucee-mysql myProjectName
+git clone https://github.com/gregmoser/docker-lucee-mysql.git myProjectName
 ```
 
 Then open up the docker quickstart terminal that was installed with docker toolbox.  Once open, navigate to project directory and run:
