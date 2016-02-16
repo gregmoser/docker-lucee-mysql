@@ -1,7 +1,7 @@
 <cfset env = createObject( "java", "java.lang.System" ).getENV() />
 
 <cfif structKeyExists(env, "BASE_APP_INSTALL") and listFindNoCase("mura,slatwall", env.BASE_APP_INSTALL)>
-	<cfinclude template="install-#env.BASE_APP_INSALL#" />
+	<cfinclude template="install-#env.BASE_APP_INSTALL#" />
 <cfelse>
 	<http>
 		<head>

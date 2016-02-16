@@ -13,7 +13,6 @@ services:
       MYSQL_ROOT_PASSWORD : MakeThisSecretMySQLRootPassword!
       MYSQL_HOST : appdb
       MYSQL_DATABASE : appdatabase
-      BASE_APP_INSTALL: mura
   appdb:
     image: mysql
     ports:
