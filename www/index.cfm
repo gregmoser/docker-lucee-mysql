@@ -1,6 +1,6 @@
 <!--- HUNT FOR AN APP TO INSTALL --->
 <cfset env = createObject( "java", "java.lang.System" ).getENV() />
-<cfset installable = "mura,slatwall" />
+<cfset installableList = "mura,slatwall" />
 <cfset appToInstall = "" />
 
 <cfif structKeyExists(url, "install") and listFindNoCase(installableList, url.install) >
