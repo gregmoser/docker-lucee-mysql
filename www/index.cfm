@@ -1,7 +1,23 @@
+<!--- HUNT FOR AN APP TO INSTALL --->
 <cfset env = createObject( "java", "java.lang.System" ).getENV() />
+<cfset installable = "mura,slatwall" />
+<cfset appToInstall = "" />
 
-<cfif structKeyExists(env, "BASE_APP_INSTALL") and listFindNoCase("mura,slatwall", env.BASE_APP_INSTALL)>
-	<cfinclude template="install-#env.BASE_APP_INSTALL#" />
+<cfif structKyeExists(url, "install") and listFindNoCase(installableList, url.install) >
+	<cfset appToInstall = url.install />	
+<cfelseif structKeyExists(env, "BASE_APP_INSTALL") and listFindNoCase(installableList, env.BASE_APP_INSTALL)>
+	<cfset appToInstall = env.BASE_APP_INSTALL />
+</cfif>
+
+<!--- IF ONE IS FOUND, THE DO IT! --->
+<cfif len(appToInstall)>
+	<!--- RUN THE INSTALL SCRIPT WHICH WILL ADD APP TO WWW, AND REPLACE THIS FILE --->
+	<cfinclude template="installhelper/#appToInstall#.cfm" />
+	
+	<!--- DELETE THE INSTALLHELPER DIRECTORY --->
+	<cfdirectory action="delete" recurse="true" directory="/var/www/installhelper" />
+	
+<!--- IF NOT, THEN GIVE THE STARTUP MESSAGE --->
 <cfelse>
 	<http>
 		<head>
@@ -14,8 +30,8 @@
 			<p>
 				Don't WORRY!  You can install an application right here from this screen administrator.  When the application is installed it will remove this helper app.
 				<ul>
-					<li><a href="install-mura.cfm">Install Mura</a></li>
-					<li><a href="install-slatwall.cfm">Install Slatwall</a></li>	
+					<li><a href="?install=mura">Install Mura</a></li>
+					<li><a href="?install=slatwall">Install Slatwall</a></li>	
 				</ul>
 			</p>
 			<p>
