@@ -3,7 +3,7 @@
 <cfset installable = "mura,slatwall" />
 <cfset appToInstall = "" />
 
-<cfif structKyeExists(url, "install") and listFindNoCase(installableList, url.install) >
+<cfif structKeyExists(url, "install") and listFindNoCase(installableList, url.install) >
 	<cfset appToInstall = url.install />	
 <cfelseif structKeyExists(env, "BASE_APP_INSTALL") and listFindNoCase(installableList, env.BASE_APP_INSTALL)>
 	<cfset appToInstall = env.BASE_APP_INSTALL />
