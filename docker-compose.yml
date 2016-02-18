@@ -18,7 +18,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./data:/var/lib/mysql
+      - /var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD : MakeThisSecretMySQLRootPassword!
       MYSQL_DATABASE : appdatabase
