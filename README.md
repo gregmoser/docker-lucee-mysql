@@ -12,13 +12,13 @@ Not only will this simplify team development, but it will also allow you to run 
 - Take DB snapshots during development, and pass around to other team members with the codebase (via git)
 - Push application to cloud using Tutum / Cloud Provider (AWS, DigitalOcean, Google, etc.)
 - Configure your development enviornments via repo
-- Configure your production enviornments via repo 
+- Configure your production enviornments via repo
 
 
 # Requirements
 
 - git
-- docker toolbox
+- docker toolbox (with docker-compose version >= 1.6)
 
 
 # Quickstart
@@ -79,4 +79,3 @@ You want to change the url under origin to be something like
 ```
 
 From that point forward all of your team members will just pull from this new git repo that you have setup.  They will be starting from the point that you left off.  All of your projects code lives in the /www folder so you and your co-workers can work, commit, push & pull as needed.
- 
