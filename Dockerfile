@@ -1,4 +1,4 @@
-FROM lucee/lucee-tomcat:4.5.1
+FROM lucee/lucee:4.5.3-t8.0.36
 MAINTAINER Greg Moser, greg.moser@ten24web.com
 
 RUN apt-get update && apt-get install -y uuid-runtime
